@@ -20,7 +20,7 @@ This module creates the below resources
 
 # Pre requisites
 1) Azure account and subcription id
-2) A public and private key pair to be use for linux machines, this can be generated via the azure console by creating the SSH Key resource
+2) A public and private key pair to be used for linux machines, this can be generated via the azure portal by creating the SSH Key resource
 3) A resource Group with images for the VM builds
 3) If using the optional OpenVPN Client, you will need to obtain a certificate .cer file
 
