@@ -23,9 +23,13 @@ This module creates the below resources
 2) A public and private key pair to be use for linux machines, this can be generated via the azure console by creating the SSH Key resource
 3) A resource Group with images for the VM builds
 3) If using the optional OpenVPN Client, you will need to obtain a certificate .cer file
+
 below url contains instructions for self signed cert on windows 10 
+
 https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-certificates-point-to-site
+
 below url contains instructions to configure the OpenVPN Client
+
 https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-openvpn-clients
 
 # CSV Files description
@@ -76,9 +80,9 @@ action must be Dnat
 
 # Example
 
-#you may use the below provider block or create your own
+you may use the below provider block or create your own
 
-#copy below code into a .tf file, edit the variables and csv files as per your requirement and run terraform init, terraform validate and terraform apply
+copy below code into a .tf file, edit the variables and csv files as per your requirement and run terraform init, terraform validate and terraform apply
 
 ```
 provider "azurerm" {
