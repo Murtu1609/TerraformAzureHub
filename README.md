@@ -32,31 +32,31 @@ you need to download the csv files from this page and edit them as per your requ
 
 1) The sgrules.csv file
 
-you need to fill any one from sourceaddress, sourceaddresses and sourceasg, and put na in the other two
+you need to fill any one from sourceaddress, sourceaddresses and sourceasg columns, and put na in the other two
 
-you need to fill any one from destaddress, destaddresses and destasg, and put na in the other two
+you need to fill any one from destaddress, destaddresses and destasg columns and put na in the other two
 
-use sourceadresses and destadresses when you need to define multiple ipaddresses, and seperate each using a ;
+use sourceadresses and destadresses columns when you need to define multiple ipaddresses, and seperate each using a ;
 
 provide an nsg name that you have mentioned in the variables (exampe usage below)
 
 
 
-2) windowsvms.csv and linuxvms.csv files
+2) The windowsvms.csv and linuxvms.csv files
 
-the avsets you mention will be created and assigned to the VMs, you can assign the same avset to multiple vms.
+The avsets you mention in the avset column will be created and assigned to the VMs, you can assign the same avset to multiple vms.
 
-you need to use the asgs and subnet names you mention in the variables (example usage below).
+you need to use the asgs and subnet names you mention in the variables (example usage below), for the asg,asg2,asg3 and subnet columns.
 
 each VM can have upto 3 asgs, use na in the asg columns where you do not want an asg assigned
 
-use na for ip if ipalloc is dynamic
+use na for the ip column if ipalloc column is dynamic
 
 
 
-3) the fwnwrules.csv file
+3) The fwnwrules.csv file
 
-you can have multipe rules in a collection by repeating the same collection name,
+You can have multipe rules in a collection by repeating the same collection name,
 
 all rulenames should be unique
 
