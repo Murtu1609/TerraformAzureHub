@@ -88,7 +88,7 @@ resource "azurerm_firewall_nat_rule_collection" "fwnatrules" {
       source_addresses = [for s in split(";", local.fwnatrules[index(local.fwnatrules.*.rulename, rule.key)].sourceaddresses) : s]
       #destination_addresses = local.fwnatrules[index(local.fwnatrules.*.name,each.key)].destaddresses == "firewallpublicip"? [azurerm_public_ip.fwpip[1].ip_address] : [for d in split(";",local.fwnatrules[index(local.fwnatrules.*.name,each.key)].destaddresses):d]
       destination_addresses = [azurerm_public_ip.fwpip[1].ip_address]
-      destination_ports     = [for d in split(";", local.fwnatrules[index(local.fwnatrules.*.rulename, rule.key)].destports) : d]
+      destination_ports     = [for d in split(";", local.fwnatrules[index(local.fwnatrules.*.rulename, rule.key)].destport) : d]
       protocols             = [for p in split(";", local.fwnatrules[index(local.fwnatrules.*.rulename, rule.key)].protocols) : p]
       translated_port       = local.fwnatrules[index(local.fwnatrules.*.rulename, rule.key)].translatedport
       translated_address    = local.fwnatrules[index(local.fwnatrules.*.rulename, rule.key)].translatedaddress
