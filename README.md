@@ -31,7 +31,9 @@ https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-openvpn-cli
 you need to download the csv files from this page and edit them as per your requirements
 
 The sgrules.csv file contains the following columns
+
 name	priority	direction	access	protocol	sourceport	destinationport	sourceaddress	destaddress	sourceaddresses	           destaddresses	sourceasg	destasg	nsg
+
 sg2rule1	100	  inbound	  allow  	tcp	        *	           22	               na          	*	    192.168.2.0/24;192.168.1.0/24	na	            na	      na	sg2
 
 you need to fill any one from sourceaddress, sourceaddresses and sourceasg, and put na in the other two
