@@ -29,7 +29,7 @@ below url contains instructions to configure the OpenVPN Client
 https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-openvpn-clients
 
 # CSV Files description
-download the csvfiles.zip file from this page and edit the csv files as per your requirements
+download the csvfiles.zip file and edit the csv files as per your requirements
 
 1) The sgrules.csv file
 
@@ -78,7 +78,7 @@ action must be Dnat
 
 #you may use the below provider block or create your own
 
-#copy below code into a .tf file and run terraform init, terraform validate and terraform apply
+#copy below code into a .tf file, edit the variables and csv files as per your requirement and run terraform init, terraform validate and terraform apply
 
 ```
 provider "azurerm" {
