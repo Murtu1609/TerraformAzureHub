@@ -63,5 +63,13 @@ all rulenames should be unique
 you can have multiple sourceadresses, destadresses, destports and protocols, seperate them using a ;
 
 
+4) The fwnatrules.csv
+You can have multipe rules in a collection by repeating the same collection name,
+
+all rulenames should be unique
+
+you can have multiple sourceadresses and protocols, seperate them using a ;
+
+action must be Dnat
 
 
