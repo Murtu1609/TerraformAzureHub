@@ -41,6 +41,7 @@ use sourceadresses and destadresses when you need to define multiple ipaddresses
 provide an nsg name that you have mentioned in the variables (exampe usage below)
 
 
+
 windowsvms.csv and linuxvms.csv files
 
 the avsets you mention will be created and assigned to the VMs, you can assign the same avset to multiple vms.
@@ -50,6 +51,7 @@ you need to use the asgs and subnet names you mention in the variables (example 
 each VM can have upto 3 asgs, use na in the asg columns where you do not want an asg assigned
 
 use na for ip if ipalloc is dynamic
+
 
 
 the fwnwrules.csv file
