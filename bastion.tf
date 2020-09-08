@@ -23,7 +23,7 @@ resource "azurerm_public_ip" "bpip" {
 }
 
 resource "azurerm_bastion_host" "bastion" {
-  for_each = var.firewall ? toset(["1"]) : []
+  for_each = var.bastion ? toset(["1"]) : []
 
   name                = "bastion"
   location            = var.resourcegrouplocation
