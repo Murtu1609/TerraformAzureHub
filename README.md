@@ -64,6 +64,7 @@ you can have multiple sourceadresses, destadresses, destports and protocols, sep
 
 
 4) The fwnatrules.csv
+
 You can have multipe rules in a collection by repeating the same collection name,
 
 all rulenames should be unique
