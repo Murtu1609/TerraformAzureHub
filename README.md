@@ -30,7 +30,7 @@ https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-openvpn-cli
 # CSV Files description
 you need to download the csv files from this page and edit them as per your requirements
 
-The sgrules.csv file
+1) The sgrules.csv file
 
 you need to fill any one from sourceaddress, sourceaddresses and sourceasg, and put na in the other two
 
@@ -42,7 +42,7 @@ provide an nsg name that you have mentioned in the variables (exampe usage below
 
 
 
-windowsvms.csv and linuxvms.csv files
+2) windowsvms.csv and linuxvms.csv files
 
 the avsets you mention will be created and assigned to the VMs, you can assign the same avset to multiple vms.
 
@@ -54,7 +54,7 @@ use na for ip if ipalloc is dynamic
 
 
 
-the fwnwrules.csv file
+3) the fwnwrules.csv file
 
 you can have multipe rules in a collection by repeating the same collection name,
 
