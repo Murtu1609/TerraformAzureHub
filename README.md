@@ -37,9 +37,9 @@ download the csvfiles.zip file and edit the csv files as per your requirements
 
 1) The sgrules.csv file
 
-you need to fill any one from sourceaddress, sourceaddresses and sourceasg columns, and put na in the other two
+fill any one of the sourceaddress, sourceaddresses or sourceasg columns, and put na in the other two
 
-you need to fill any one from destaddress, destaddresses and destasg columns and put na in the other two
+fill any one of the destaddress, destaddresses or destasg columns and put na in the other two
 
 use sourceadresses and destadresses columns when you need to define multiple ipaddresses, and seperate each using a ;
 
@@ -51,7 +51,7 @@ provide an nsg name that you have mentioned in the variables (exampe usage below
 
 The avsets you mention in the avset column will be created and assigned to the VMs, you can assign the same avset to multiple vms.
 
-you need to use the asgs and subnet names you mention in the variables (example usage below), for the asg,asg2,asg3 and subnet columns.
+Use the asgs and subnet names you mention in the variables (example usage below), for the asg,asg2,asg3 and subnet columns.
 
 each VM can have upto 3 asgs, use na in the asg columns where you do not want an asg assigned
 
@@ -61,7 +61,7 @@ use na for the ip column if ipalloc column is dynamic
 
 3) The fwnwrules.csv file
 
-You can have multipe rules in a collection by repeating the same collection name,
+You can have multipe rules in a collection by repeating the same collection name in the collectionname column,
 
 all rulenames should be unique
 
@@ -70,13 +70,13 @@ you can have multiple sourceadresses, destadresses, destports and protocols, sep
 
 4) The fwnatrules.csv
 
-You can have multipe rules in a collection by repeating the same collection name,
+You can have multipe rules in a collection by repeating the same collection name in the collectionname column,
 
 all rulenames should be unique
 
 you can have multiple sourceadresses and protocols, seperate them using a ;
 
-action must be Dnat
+action column must be Dnat
 
 # Example
 
