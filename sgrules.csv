@@ -1,0 +1,6 @@
+name,priority,direction,access,protocol,sourceport,destinationport,sourceaddress,destaddress,sourceaddresses,destaddresses,sourceasg,destasg,nsg
+sg1rule1,100,inbound,allow,tcp,*,80,*,*,na,na,na,na,sg1
+sg1rule2,110,inbound,allow,tcp,0-65535,3389,na,na,na,na,asg1,asg2,sg1
+sg1rule3,120,inbound,allow,tcp,0-65535,8080,*,*,na,na,na,na,sg1
+sg2rule1,100,inbound,allow,tcp,*,22,na,*,192.168.2.0/24;192.168.1.0/24,na,na,na,sg2
+test5,140,inbound,allow,tcp,0-65535,3389,na,na,na,na,asg1,asg3,sg2

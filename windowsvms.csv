@@ -1,0 +1,4 @@
+adminuser,name,ipalloc,ip,imagename,imagerg,size,subnet,avset,asg,asg2,asg3
+zadmin,windowsexample1,static,10.10.1.15,windows_server_base,images,Standard_B1ms,subnet1,avset1,asg1,asg2,asg3
+zadmin,windowsexample2,dynamic,na,windows_server_base,images,Standard_B1ms,subnet2,avset2,asg1,asg2,na
+zadmin,windowsexample3,dynamic,na,windows_server_base,images,Standard_B1ms,subnet3,avset2,asg1,na,na

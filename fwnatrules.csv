@@ -1,0 +1,4 @@
+collectionname,priority,action,rulename,sourceaddresses,destport,translatedport,translatedaddress,protocols
+nat1,200,Dnat,nat1rule1,192.168.1.0/24;192.168.2.0/24,3389,3389,10.10.1.15,TCP
+nat1,200,Dnat,nat1rule2,*,22,22,10.10.1.10,TCP
+nat2,250,Dnat,nat2rule1,*,80,80,10.10.1.10,TCP;UDP

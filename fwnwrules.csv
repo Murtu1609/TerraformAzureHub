@@ -1,0 +1,5 @@
+collectionname,priority,action,rulename,sourceaddresses,destaddresses,destports,protocols
+fwrules1,100,Allow,rules1rule1,192.168.2.0/24;192.168.3.0/24,10.10.1.0/24;10.10.2.0/24,3389;22,TCP
+fwrules1,100,Allow,rules1rue2,192.168.3.0/24;192.168.4.0/24,10.10.3.0/24;10.10.4.0/24,3389;22,TCP
+fwrules2,110,Allow,rules2rule1,192.168.2.0/24,10.10.1.0/24,8080,TCP;UDP
+fwrules2,110,Allow,rules2rule2,192.168.5.0/24,10.10.100.0/24,8080,TCP;UDP
