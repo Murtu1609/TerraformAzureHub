@@ -33,7 +33,7 @@ below url contains instructions to configure the OpenVPN Client
 https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-openvpn-clients
 
 # CSV Files description
-create your csv files as per the examples linuxvms.csv, windowsvm.csv, sgrules.csv, fwnwrules.csv and fwnatrules.csv, and edit them as per your requirements
+create your csv files as per the examples linuxvms.csv, windowsvm.csv, sgrules.csv, fwnwrules.csv and fwnatrules.csv, or download the .zip ones, and edit them as per your requirements
 
 1) The sgrules.csv file
 
