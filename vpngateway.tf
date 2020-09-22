@@ -31,7 +31,7 @@ resource "azurerm_virtual_network_gateway" "vpngw" {
   type       = "Vpn"
   vpn_type   = "RouteBased"
   enable_bgp = true
-  sku        = "VpnGw2"
+  sku        = var.vpnmultiaz ? "VpnGw${var.vpnsku}AZ" : "VpnGw${var.vpnsku}"
   generation = "Generation2"
   tags       = azurerm_resource_group.rg.tags
 
