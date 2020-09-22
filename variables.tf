@@ -137,3 +137,9 @@ type = string
 variable "publickeypath" {
 type = string
 }
+
+variable "vpnmultiaz" {
+}
+
+variable "vpnsku" {
+}
