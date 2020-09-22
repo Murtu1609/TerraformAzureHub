@@ -136,9 +136,9 @@ bastionsubnetaddress = "10.10.5.0/24"
 #details for optional VPN Gateway and OpenVPN client, you need to provide the path for the vpn cert .cer file
 vpngw         = "true"
 gwaddress     = "10.10.6.0/24"
-vpnsku        = 2     //accepted values are 2,3,4 and 5
-vpnclient     = "true"
-vpnclient     = "true"
+vpnmultiaz    =  "false"  
+vpnsku        =  2     //accepted values are 2,3,4 and 5
+vpnclient     =  "true"
 clientaddress = ["192.168.2.0/24"]
 vpncertname   = "selfsigned"
 vpncertpath   = "D:/AzureTerraform/AZTF/hub3/vpncert.cer"
