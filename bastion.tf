@@ -1,7 +1,7 @@
 
 
 
-resource "azurerm_subnet" "bastionsub" {
+/*resource "azurerm_subnet" "bastionsub" {
   for_each = var.bastion ? toset(["1"]) : []
 
   resource_group_name  = azurerm_resource_group.rg.name
@@ -9,7 +9,7 @@ resource "azurerm_subnet" "bastionsub" {
 
   name             = "AzureBastionSubnet"
   address_prefixes = [var.bastionsubnetaddress]
-}
+}*/
 
 resource "azurerm_public_ip" "bpip" {
   for_each = var.bastion ? toset(["1"]) : []
@@ -32,7 +32,7 @@ resource "azurerm_bastion_host" "bastion" {
 
   ip_configuration {
     name                 = "bastion"
-    subnet_id            = azurerm_subnet.bastionsub[1].id
+    subnet_id            = azurerm_subnet.subnet[var.bastionsubnet].id
     public_ip_address_id = azurerm_public_ip.bpip[1].id
   }
 }

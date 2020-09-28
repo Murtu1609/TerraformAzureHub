@@ -25,15 +25,15 @@ variable asgs {
 }
 
 
-variable bastionsubnetaddress {
+variable bastionsubnet {
   type    = string
-  default = "10.0.5.16/28"
+
 }
 
 variable vpngw {
   type = bool
 }
-variable gwaddress {
+variable gwsubnet {
   type = string
 }
 
@@ -58,7 +58,7 @@ variable firewall {
   type = bool
 }
 
-variable fwaddress {
+variable fwsubnet {
   type = string
 }
 
@@ -139,7 +139,29 @@ type = string
 }
 
 variable "vpnmultiaz" {
+
 }
 
 variable "vpnsku" {
+
+}
+
+variable "createdomain" {
+type = bool
+}
+
+variable "templatefilepath" {
+
+}
+
+variable "domainname" {
+
+}
+
+variable "domainsubnet" {
+
+}
+
+variable "filteredsync" {
+
 }

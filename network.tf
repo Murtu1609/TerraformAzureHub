@@ -3,7 +3,7 @@
 resource "azurerm_resource_group" "rg" {
   name     = var.resourcegroupname
   location = var.resourcegrouplocation
-  tags     = var.tags
+  tags     = var.tags 
 }
 
 resource "azurerm_virtual_network" "vnet" {

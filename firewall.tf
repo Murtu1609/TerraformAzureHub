@@ -1,12 +1,12 @@
 
-resource "azurerm_subnet" "fwsub" {
+/*resource "azurerm_subnet" "fwsub" {
   for_each             = var.firewall ? toset(["1"]) : []
   name                 = "AzureFirewallSubnet"
   resource_group_name  = azurerm_resource_group.rg.name
   virtual_network_name = azurerm_virtual_network.vnet.name
   address_prefixes     = [var.fwaddress]
 
-}
+}*/
 
 resource "azurerm_public_ip" "fwpip" {
   for_each            = var.firewall ? toset(["1"]) : []
@@ -30,7 +30,7 @@ resource "azurerm_firewall" "fw" {
   ip_configuration {
     name                 = "fwIpConfig"
     public_ip_address_id = azurerm_public_ip.fwpip[1].id
-    subnet_id            = azurerm_subnet.fwsub[1].id
+    subnet_id            = azurerm_subnet.subnet[var.fwsubnet].id
   }
 }
 
