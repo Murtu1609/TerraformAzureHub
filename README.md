@@ -16,7 +16,8 @@ This module creates the below resources
 11) Optional Bastion Host
 12) Optional VPN Gateway and optional OpenVPN Client
 13) Optional firewall, and firewall network and NAT rules using csv files
-14) Optional recovery vault and backup policy to be assigned to each VM
+14) Optional domain
+15) Optional recovery vault and backup policy to be assigned to each VM
 
 # Pre requisites
 1) Azure account and subcription id
