@@ -1,0 +1,37 @@
+
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+"parameters": {
+    "domainName": {
+      },
+    "filteredSync": {
+        },
+    "subnetid": {
+        },
+
+    "notificationSettings": {
+        "value": {
+            "notifyGlobalAdmins": "Enabled",
+            "notifyDcAdmins": "Enabled",
+            "additionalRecipients": []
+        }
+    }
+},
+
+"resources": [
+    {
+        "apiVersion": "2017-06-01",
+        "type": "Microsoft.AAD/DomainServices",
+        "name": "[parameters('domainName')]",
+        "location": "[parameters('location')]",
+        
+        "properties": {
+            "domainName": "[parameters('domainName')]",
+            "subnetId": "[parameters('subnetid')]",
+            "filteredSync": "[parameters('filteredSync')]",
+            "notificationSettings": "[parameters('notificationSettings')]"
+        }
+    }
+]
+}
