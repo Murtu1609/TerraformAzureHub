@@ -1,3 +1,3 @@
 adminuser,name,ipalloc,ip,imagename,imagerg,size,subnet,avset,asg,asg2,asg3
 zadmin,linuxexample1,dynamic,na,ubuntu,images,Standard_B1ms,subnet3,avset2,asg1,asg2,asg3
-zadmin,linuxexample2,static,10.10.1.10,ubuntu,images,Standard_B1ms,subnet1,avset1,asg1,asg2,na
+zadmin,linuxexample2,static,10.10.2.10,ubuntu,images,Standard_B1ms,subnet2,avset1,asg1,asg2,na
