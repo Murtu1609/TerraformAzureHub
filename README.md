@@ -121,10 +121,10 @@ asgs = ["asg1", "asg2", "asg3"]
 if you do not wish to create any of them, delete all rows except for the first title row
 you need to have a private and public key pair, paste the public key in a txt file and provide its path,
 use the private key to access the linux machines */
-sgrulespath = "D:/AzureTerraform/AZTF/hub3/csvfiles/sgrules.csv"
-windowsvmpath = "D:/AzureTerraform/AZTF/hub3/csvfiles/windowsvms.csv"
-linuxvmpath = "D:/AzureTerraform/AZTF/hub3/csvfiles/linuxvms.csv"
-publickeypath = "D:/AzureTerraform/AZTF/hub3/publickey.txt"
+sgrulespath = "D:/AzureTerraform/AZTF/hub6/csvfiles/sgrules.csv"
+windowsvmpath = "D:/AzureTerraform/AZTF/hub6/csvfiles/windowsvms.csv"
+linuxvmpath = "D:/AzureTerraform/AZTF/hub6/csvfiles/linuxvms.csv"
+publickeypath = "D:/AzureTerraform/AZTF/hub6/publickey.txt"
 
 #AzureADGroupname which will have access to the keyvault containing the windowspassword
 keyvaultgroup = "keyvaultaccessgroup"
@@ -146,7 +146,7 @@ vpncertpath   = "D:/AzureTerraform/AZTF/hub6/vpncert.cer"
 #Details for optional firewall
 firewall  = "true"
 fwsubnet = "10.10.7.0/24"
-networkrulespath = "D:/AzureTerraform/AZTF/hub3/csvfiles/fwnwrules.csv"
+networkrulespath = "D:/AzureTerraform/AZTF/hub6/csvfiles/fwnwrules.csv"
 natrulespath = "D:/AzureTerraform/AZTF/hub6/csvfiles/fwnatrules.csv"
 
 #Details for optional Domain
