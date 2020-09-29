@@ -110,10 +110,6 @@ addressspace = ["10.10.0.0/16"]
 /* multiple subnets with their corresponding address spaces and security groups to be created.
    different or same security groups can be assigned to each subnet */
 subnets = [
-  { name = "AzureBastionSubnet", address = "10.10.1.0/24", sg = "sg1" },
-  { name = "AzureFirewallSubnet", address = "10.10.5.0/24", sg = "sg1" },
-  { name = "GatewaySubnet", address = "10.10.6.0/24", sg = "sg1" },
-  { name = "domainservices", address = "10.10.7.0/24", sg = "sg1" },
   { name = "subnet2", address = "10.10.2.0/24", sg = "sg2" },
   { name = "subnet3", address = "10.10.3.0/24", sg = "sg2" },
 ]
@@ -135,11 +131,11 @@ keyvaultgroup = "keyvaultaccessgroup"
 
 #details for optional bastion host
 bastion              = "true"
-bastionsubnet        = "AzureBastionSubnet"  //name of bastion subnet mentioned in above subnets section, must be AzureBastionSubnet
+bastionsubnet        = "10.10.5.0/24"  
 
 #details for optional VPN Gateway and OpenVPN client, you need to provide the path for the vpn cert .cer file
 vpngw         = "true"
-gwsubnet     = "GatewaySubnet" //name of Gateway subnet mentioned in above subnets section, must be GatewaySubnet
+gwsubnet     = "10.10.6.0/24"
 vpnmultiaz    =  "false"   
 vpnsku      = 2     //accepted values are 2,3,4 and 5
 vpnclient     = "true"
@@ -149,7 +145,7 @@ vpncertpath   = "D:/AzureTerraform/AZTF/hub6/vpncert.cer"
 
 #Details for optional firewall
 firewall  = "true"
-fwsubnet = "AzureFirewallSubnet"  //name of firewall subnet mentioned in above subnets section, must be AzureFirewallSubnet
+fwsubnet = "10.10.7.0/24"
 networkrulespath = "D:/AzureTerraform/AZTF/hub3/csvfiles/fwnwrules.csv"
 natrulespath = "D:/AzureTerraform/AZTF/hub6/csvfiles/fwnatrules.csv"
 
@@ -157,7 +153,7 @@ natrulespath = "D:/AzureTerraform/AZTF/hub6/csvfiles/fwnatrules.csv"
 createdomain = "true"
 templatefilepath = "D:/AzureTerraform/AZTF/hub6/domain.json" //download the domain.json file
 domainname = "contoso.net"
-domainsubnet = "domainservices" //name of domain subnet mentioned in above subnets section
+domainsubnet = "10.10.8.0/24"
 filteredsync = "Disabled"
 
 #Details for optional recovery vault and backup policy that will be assigned to each VM
