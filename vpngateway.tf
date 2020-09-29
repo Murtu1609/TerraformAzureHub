@@ -1,12 +1,12 @@
 
-/*resource "azurerm_subnet" "gwsub" {
+resource "azurerm_subnet" "gwsub" {
   for_each             = var.vpngw ? toset(["1"]) : []
   name                 = "GatewaySubnet"
   resource_group_name  = azurerm_resource_group.rg.name
   virtual_network_name = azurerm_virtual_network.vnet.name
-  address_prefixes     = [var.gwaddress]
+  address_prefixes     = [var.gwsubnet]
 
-}*/
+}
 
 resource "azurerm_public_ip" "gwpip" {
   for_each            = var.vpngw ? toset(["1"]) : []
@@ -39,7 +39,7 @@ resource "azurerm_virtual_network_gateway" "vpngw" {
     name                          = "vpngwIpConfig"
     public_ip_address_id          = azurerm_public_ip.gwpip[1].id
     private_ip_address_allocation = "Dynamic"
-    subnet_id                     = azurerm_subnet.subnet[var.gwsubnet].id
+    subnet_id                     = azurerm_subnet.gwsub[1].id
   }
 
 
