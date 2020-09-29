@@ -110,7 +110,8 @@ addressspace = ["10.10.0.0/16"]
 /* multiple subnets with their corresponding address spaces and security groups to be created.
    different or same security groups can be assigned to each subnet */
 subnets = [
-  { name = "subnet2", address = "10.10.2.0/24", sg = "sg2" },
+  { name = "subnet1", address = "10.10.1.0/24", sg = "sg1" },
+  { name = "subnet2", address = "10.10.2.0/24", sg = "sg1" },
   { name = "subnet3", address = "10.10.3.0/24", sg = "sg2" },
 ]
 
