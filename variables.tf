@@ -90,7 +90,7 @@ variable backuppolicy {
 
 }
 
-
+/*
 variable "tags" {
   type = object({
     owner         = string
@@ -108,6 +108,10 @@ variable "tags" {
     env           = null
     enforce       = null
   }
+}
+*/
+
+variable "tags" {
 }
 
 variable "keyvaultgroup"{
