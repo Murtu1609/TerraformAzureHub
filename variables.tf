@@ -150,22 +150,3 @@ variable "vpnsku" {
 
 }
 
-variable "createdomain" {
-type = bool
-}
-
-variable "templatefilepath" {
-
-}
-
-variable "domainname" {
-
-}
-
-variable "domainsubnet" {
-
-}
-
-variable "filteredsync" {
-
-}
