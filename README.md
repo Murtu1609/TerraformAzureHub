@@ -150,13 +150,6 @@ fwsubnet = "10.10.7.0/24"
 networkrulespath = "D:/AzureTerraform/AZTF/hub6/csvfiles/fwnwrules.csv"
 natrulespath = "D:/AzureTerraform/AZTF/hub6/csvfiles/fwnatrules.csv"
 
-#Details for optional Domain
-createdomain = "true"
-templatefilepath = "D:/AzureTerraform/AZTF/hub6/domain.json" //download the domain.json file
-domainname = "contoso.net"
-domainsubnet = "10.10.8.0/24"
-filteredsync = "Disabled"
-
 #Details for optional recovery vault and backup policy that will be assigned to each VM
 recoveryvault = "true"
 backuppolicy = {
