@@ -150,3 +150,6 @@ variable "vpnsku" {
 
 }
 
+variable "images_subscription" {
+
+}
