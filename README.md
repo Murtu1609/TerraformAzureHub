@@ -126,6 +126,7 @@ sgrulespath = "D:/AzureTerraform/AZTF/hub6/csvfiles/sgrules.csv"
 windowsvmpath = "D:/AzureTerraform/AZTF/hub6/csvfiles/windowsvms.csv"
 linuxvmpath = "D:/AzureTerraform/AZTF/hub6/csvfiles/linuxvms.csv"
 publickeypath = "D:/AzureTerraform/AZTF/hub6/publickey.txt"
+images_subscription = "subscription id of the resource group containing your images"
 
 #AzureADGroupname which will have access to the keyvault containing the windowspassword
 keyvaultgroup = "keyvaultaccessgroup"
