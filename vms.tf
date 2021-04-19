@@ -6,8 +6,9 @@ resource "azurerm_availability_set" "avset" {
 
   name                = each.value
   resource_group_name = azurerm_resource_group.rg.name
-  location            = var.resourcegrouplocation
+  location            = azurerm_resource_group.rg.location
   tags                = azurerm_resource_group.rg.tags
+  platform_fault_domain_count = 2
 }
 
 resource "azurerm_application_security_group" "asgs" {
@@ -30,10 +31,13 @@ locals {
   vm = csvdecode(file(var.windowsvmpath))
 }
 
-data "azurerm_image" "im" {
+data "azurerm_shared_image_version" "im" {
+  provider = azurerm.images
   for_each            = toset(local.vm.*.imagename)
-  name                = each.key
+  name = local.vm[index(local.vm.*.imagename, each.key)].version
+  image_name                = each.key
   resource_group_name = local.vm[index(local.vm.*.imagename, each.key)].imagerg
+  gallery_name = local.vm[index(local.vm.*.imagename, each.key)].gallery
 }
 
 
@@ -94,10 +98,11 @@ resource "azurerm_windows_virtual_machine" "vm" {
   admin_password        = azurerm_key_vault_secret.windowspwd.value
   admin_username        = local.vm[index(local.vm.*.name, each.key)].adminuser
   network_interface_ids = [azurerm_network_interface.nic[each.key].id]
-  source_image_id       = data.azurerm_image.im[local.vm[index(local.vm.*.name, each.key)].imagename].id
+  source_image_id       = data.azurerm_shared_image_version.im[local.vm[index(local.vm.*.name, each.key)].imagename].id
   size                  = local.vm[index(local.vm.*.name, each.key)].size
   availability_set_id   = azurerm_availability_set.avset[local.vm[index(local.vm.*.name, each.key)].avset].id
   tags                  = azurerm_resource_group.rg.tags
+  enable_automatic_updates = true
   identity {
     type         = "UserAssigned"
     identity_ids = [azurerm_user_assigned_identity.uai.id]
@@ -130,10 +135,13 @@ locals {
   linuxvm = csvdecode(file(var.linuxvmpath))
 }
 
-data "azurerm_image" "lim" {
+data "azurerm_shared_image_version" "lim" {
+  provider = azurerm.images
   for_each            = toset(local.linuxvm.*.imagename)
-  name                = each.key
+  name = local.linuxvm[index(local.linuxvm.*.imagename, each.key)].version
+  image_name                = each.key
   resource_group_name = local.linuxvm[index(local.linuxvm.*.imagename, each.key)].imagerg
+  gallery_name = local.linuxvm[index(local.linuxvm.*.imagename, each.key)].gallery
 }
 
 resource "azurerm_network_interface" "lnic" {
@@ -191,7 +199,7 @@ resource "azurerm_linux_virtual_machine" "linuxvm" {
 
   admin_username        = local.linuxvm[index(local.linuxvm.*.name, each.key)].adminuser
   network_interface_ids = [azurerm_network_interface.lnic[each.key].id]
-  source_image_id       = data.azurerm_image.lim[local.linuxvm[index(local.linuxvm.*.name, each.key)].imagename].id
+  source_image_id       = data.azurerm_shared_image_version.lim[local.linuxvm[index(local.linuxvm.*.name, each.key)].imagename].id
   size                  = local.linuxvm[index(local.linuxvm.*.name, each.key)].size
   availability_set_id   = azurerm_availability_set.avset[local.linuxvm[index(local.linuxvm.*.name, each.key)].avset].id
   tags                  = azurerm_resource_group.rg.tags
@@ -225,3 +233,5 @@ resource "azurerm_backup_protected_vm" "lvm" {
   source_vm_id        = azurerm_linux_virtual_machine.linuxvm[each.value].id
   backup_policy_id    = azurerm_backup_policy_vm.bp[1].id
 }
+
+#==============================================================================
